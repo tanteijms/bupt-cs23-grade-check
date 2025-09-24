@@ -22,16 +22,38 @@
                 </div>
                 <div class="subtitle">北京邮电大学计算机学院2023级智育成绩查询系统</div>
                 
-                <!-- 背景控制按钮 -->
-                <div class="background-controls">
-                    <button id="changeBgBtn" class="bg-control-btn" title="切换背景">
+                <!-- 操作按钮组 -->
+                <div class="header-actions">
+                    <!-- GitHub按钮 -->
+                    <a href="https://github.com/tanteijms" target="_blank" class="action-btn github-btn" title="访问GitHub主页">
+                        <img src="./images/github.png" alt="GitHub" class="btn-icon">
+                        <span>GitHub</span>
+                    </a>
+                    
+                    <!-- 代码仓库按钮 -->
+                    <a href="https://github.com/tanteijms/bupt-cs23-grade-check" target="_blank" class="action-btn repo-btn" title="查看源码">
+                        <img src="./images/code.png" alt="Code" class="btn-icon">
+                        <span>源码</span>
+                    </a>
+                    
+                    <!-- 背景控制按钮 -->
+                    <button id="changeBgBtn" class="action-btn bg-control-btn" title="切换背景">
                         <i class="fas fa-image"></i>
                         <span>换背景</span>
                     </button>
-                    <button id="bgInfoBtn" class="bg-control-btn" title="背景信息">
+                    <button id="bgInfoBtn" class="action-btn bg-control-btn" title="背景信息">
                         <i class="fas fa-info-circle"></i>
                         <span id="bgInfoText">随机背景</span>
                     </button>
+                </div>
+                
+                <!-- 支持提示 -->
+                <div class="support-hint">
+                    <span>如果您喜欢的话，请给一个</span>
+                    <img src="./images/follow.png" alt="Follow" class="emoji-icon">
+                    <span>follow 或</span>
+                    <img src="./images/star.png" alt="Star" class="emoji-icon">
+                    <span>star</span>
                 </div>
             </div>
         </header>
@@ -44,6 +66,9 @@
                     <div class="search-title">
                         <h2><i class="fas fa-search"></i> 成绩查询</h2>
                         <p>请输入您的学号进行查询</p>
+                        <div class="student-count">
+                            <span>总人数，计科 358人</span>
+                        </div>
                     </div>
                     
                     <div class="search-form">
@@ -51,7 +76,7 @@
                             <input 
                                 type="text" 
                                 id="studentId" 
-                                placeholder="请输入学号 (例如: 2023211233)"
+                                placeholder="请输入学号"
                                 maxlength="10"
                                 autocomplete="off"
                             >
@@ -62,8 +87,15 @@
                         </div>
                         <div class="search-tips">
                             <i class="fas fa-info-circle"></i>
-                            <span>支持查询358名学生的智育成绩及排名</span>
+                            <span>支持查询23级计科学生的智育成绩及排名</span>
                         </div>
+                    </div>
+                    
+                    <!-- 重要说明 -->
+                    <div class="important-notice">
+                        <h4><i class="fas fa-exclamation-triangle"></i> 重要说明</h4>
+                        <p>本成绩数据基于两学年综合测评公示的智育排名进行计算，学分加权仅计算21版培养方案中推荐选修的学分总和。由于数据处理过程中不可避免的细微差异，最终结果仅供参考。</p>
+                        <p>部分同学仅有一个学年的成绩数据，系统采用大二成绩作为综合成绩进行估算，这可能会产生一定误差，请理性对待查询结果。</p>
                     </div>
                 </div>
             </div>
@@ -84,81 +116,13 @@
                 </div>
             </div>
 
-            <!-- 快速查询示例 -->
-            <div class="quick-search-section">
-                <div class="quick-search-container">
-                    <h3><i class="fas fa-bolt"></i> 快速查询示例</h3>
-                    <div class="quick-examples">
-                        <button class="example-btn" onclick="quickSearch('2023211233')">
-                            <span class="example-rank">#1</span>
-                            <span class="example-id">2023211233</span>
-                            <span class="example-score">93.96分</span>
-                        </button>
-                        <button class="example-btn" onclick="quickSearch('2023210797')">
-                            <span class="example-rank">#7</span>
-                            <span class="example-id">2023210797</span>
-                            <span class="example-tag">转入</span>
-                        </button>
-                        <button class="example-btn" onclick="quickSearch('2023211959')">
-                            <span class="example-rank">#47</span>
-                            <span class="example-id">2023211959</span>
-                            <span class="example-tag">转入</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
 
-            <!-- 统计信息 -->
-            <div class="stats-section">
-                <div class="stats-container">
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="stat-content">
-                            <div class="stat-number">358</div>
-                            <div class="stat-label">总人数</div>
-                        </div>
-                    </div>
-                    
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-user-check"></i>
-                        </div>
-                        <div class="stat-content">
-                            <div class="stat-number">348</div>
-                            <div class="stat-label">完整成绩</div>
-                        </div>
-                    </div>
-                    
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-user-plus"></i>
-                        </div>
-                        <div class="stat-content">
-                            <div class="stat-number">10</div>
-                            <div class="stat-label">转入学生</div>
-                        </div>
-                    </div>
-                    
-                    <div class="stat-item">
-                        <div class="stat-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <div class="stat-content">
-                            <div class="stat-number">93.96</div>
-                            <div class="stat-label">最高分</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </main>
 
         <!-- 页脚 -->
         <footer class="footer">
             <div class="footer-content">
                 <div class="footer-text">
-                    <p>&copy; 2024 北京邮电大学计算机学院2023级 | 智育成绩查询系统</p>
                     <p class="footer-note">数据更新时间: 2024年9月24日 | <span id="currentBgInfo">当前背景: 随机选择</span></p>
                 </div>
             </div>

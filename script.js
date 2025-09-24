@@ -4,7 +4,7 @@ let studentsData = {};
 // 背景图片配置
 const backgroundConfig = {
     images: [
-        { file: './images/bocchi.jpg', name: '后藤一人', color: '#FFB6C1' },
+        { file: './images/bocchi.jpg', name: '后藤一里', color: '#FFB6C1' },
         { file: './images/kita.jpg', name: '喜多郁代', color: '#98FB98' },
         { file: './images/ryo.jpg', name: '山田凉', color: '#87CEEB' },
         { file: './images/nijika.jpg', name: '伊地知虹夏', color: '#F0E68C' }

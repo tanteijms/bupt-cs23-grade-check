@@ -71,20 +71,21 @@ body.background-changed {
 
 /* 头部样式 */
 .header {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-light);
-    padding: 1.5rem 0;
-    position: sticky;
-    top: 0;
+    background: transparent;
+    padding: 2rem 0;
+    position: relative;
     z-index: 100;
 }
 
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 2rem;
     text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
 }
 
 .logo {
@@ -94,8 +95,9 @@ body.background-changed {
     gap: 0.75rem;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: white;
     margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .logo i {
@@ -103,45 +105,82 @@ body.background-changed {
 }
 
 .subtitle {
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.9);
     font-size: 0.95rem;
     font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    margin-bottom: 1.5rem;
 }
 
-/* 背景控制按钮 */
-.background-controls {
+/* 头部操作按钮组 */
+.header-actions {
     display: flex;
     gap: 0.75rem;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.bg-control-btn {
+.action-btn {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid var(--border-light);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--radius-lg);
-    color: var(--text-secondary);
+    color: white;
     font-size: 0.875rem;
     cursor: pointer;
     transition: all 0.2s ease;
     backdrop-filter: blur(10px);
+    text-decoration: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.bg-control-btn:hover {
-    background: rgba(255, 255, 255, 1);
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.bg-control-btn i {
+.action-btn i {
     font-size: 0.875rem;
+}
+
+.btn-icon {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+.github-btn:hover {
+    background: rgba(51, 51, 51, 0.8);
+    border-color: #333;
+}
+
+.repo-btn:hover {
+    background: rgba(37, 99, 235, 0.8);
+    border-color: var(--primary-color);
+}
+
+/* 支持提示 */
+.support-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.emoji-icon {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
 }
 
 /* 主要内容 */
@@ -252,6 +291,57 @@ body.background-changed {
     color: var(--text-light);
     font-size: 0.875rem;
     justify-content: center;
+}
+
+/* 学生人数统计 */
+.student-count {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(37, 99, 235, 0.1);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: var(--radius-md);
+    display: inline-block;
+}
+
+.student-count span {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+/* 重要说明 */
+.important-notice {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 193, 7, 0.1);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    border-left: 4px solid var(--warning-color);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
+}
+
+.important-notice h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--warning-color);
+}
+
+.important-notice h4 i {
+    font-size: 1rem;
+}
+
+.important-notice p {
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.important-notice p:last-child {
+    margin-bottom: 0;
 }
 
 /* 结果区域 */
@@ -628,9 +718,7 @@ body.background-changed {
 
 /* 页脚 */
 .footer {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid var(--border-light);
+    background: transparent;
     padding: 2rem 0;
     margin-top: auto;
 }
@@ -638,14 +726,19 @@ body.background-changed {
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 1.5rem 2rem;
     text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
 }
 
 .footer-text p {
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 0.875rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .footer-note {
