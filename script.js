@@ -165,7 +165,7 @@ function displayResult(studentData) {
             
             <div class="rank-display">
                 <div class="rank-number">${studentData.排名}</div>
-                <div class="rank-label">班级排名</div>
+                <div class="rank-label">专业排名</div>
                 <div class="rank-total">/ 358人</div>
             </div>
             
@@ -307,7 +307,7 @@ function shareResult(studentId) {
     if (!student) return;
     
     const shareText = `我在北邮计算机学院2023级智育成绩查询系统中查到了我的成绩：
-班级排名: ${student.排名}/358
+专业排名: ${student.排名}/358
 加权平均分: ${student.加权平均分}
 学生类型: ${student.学生类型}学生`;
 
