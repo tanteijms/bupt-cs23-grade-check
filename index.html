@@ -9,55 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- 背景遮罩层 -->
-    <div class="background-overlay"></div>
     
     <div class="container">
         <!-- 头部 -->
         <header class="header">
             <div class="header-content">
-                <div class="logo">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>BUPT Grade Query</span>
-                </div>
-                <div class="subtitle">北邮计科23级智育成绩查询</div>
-                
-                <!-- 操作按钮组 -->
-                <div class="header-actions">
-                    <!-- GitHub按钮 -->
-                    <div class="action-btn github-btn">
-                        <a href="https://github.com/tanteijms" target="_blank" class="btn-icon-link" title="访问GitHub主页">
-                            <img src="./images/github.png" alt="GitHub" class="btn-icon">
-                        </a>
-                        <span>GitHub</span>
-                    </div>
-                    
-                    <!-- 代码仓库按钮 -->
-                    <div class="action-btn repo-btn">
-                        <a href="https://github.com/tanteijms/bupt-cs23-grade-check" target="_blank" class="btn-icon-link" title="查看源码">
-                            <img src="./images/code.png" alt="Code" class="btn-icon">
-                        </a>
-                        <span>源码</span>
-                    </div>
-                    
-                    <!-- 背景控制按钮 -->
-                    <button id="changeBgBtn" class="action-btn bg-control-btn" title="切换背景">
-                        <i class="fas fa-image"></i>
-                        <span>换背景</span>
-                    </button>
-                    <button id="bgInfoBtn" class="action-btn bg-control-btn" title="背景信息">
-                        <i class="fas fa-info-circle"></i>
-                        <span id="bgInfoText">随机背景</span>
-                    </button>
-                </div>
-                
-                <!-- 支持提示 -->
-                <div class="support-hint">
-                    <span>如果您喜欢的话，请给一个</span>
-                    <img src="./images/follow.png" alt="Follow" class="emoji-icon">
-                    <span>follow 或</span>
-                    <img src="./images/star.png" alt="Star" class="emoji-icon">
-                    <span>star</span>
+                <div class="title">
+                    <h1>北邮计科23级智育成绩查询</h1>
                 </div>
             </div>
         </header>
@@ -140,13 +98,6 @@
         <div class="loading-text">正在查询中...</div>
     </div>
 
-    <!-- 背景加载提示 -->
-    <div class="bg-loading" id="bgLoading" style="display: none;">
-        <div class="bg-loading-content">
-            <i class="fas fa-image fa-pulse"></i>
-            <span>切换背景中...</span>
-        </div>
-    </div>
 
     <!-- JavaScript -->
     <script src="script.js"></script>
